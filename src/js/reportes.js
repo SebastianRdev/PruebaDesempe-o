@@ -224,7 +224,7 @@ async function totalMesAgrupado() {
 
     const totales = {};
 
-    // Agrupa los importes de compras y ventas por mes
+    // Agrupa los montos de compras y ventas por mes
     data.forEach(mov => {
         const mes = mov.fecha.slice(0, 7);
         const tipo = mov.tipo;
@@ -232,9 +232,9 @@ async function totalMesAgrupado() {
             totales[mes] = { ventas: 0, compras: 0 };
         }
         if (tipo === "venta") {
-            totales[mes].ventas += mov.importe;
+            totales[mes].ventas += mov.monto;
         } else if (tipo === "compra") {
-            totales[mes].compras += mov.importe;
+            totales[mes].compras += mov.monto;
         }
 
     });
@@ -262,7 +262,7 @@ async function totalCategoriaAgrupado() {
 
     const totales = {};
 
-    // Agrupa los importes de compras y ventas por categoría
+    // Agrupa los montos de compras y ventas por categoría
     data.forEach(mov => {
         const categoria = mov.category?.nombre || "Sin categoría";
         const tipo = mov.tipo;
@@ -270,9 +270,9 @@ async function totalCategoriaAgrupado() {
             totales[categoria] = { ventas: 0, compras: 0 };
         }
         if (tipo === "venta") {
-            totales[categoria].ventas += mov.importe;
+            totales[categoria].ventas += mov.monto;
         } else if (tipo === "compra") {
-            totales[categoria].compras += mov.importe;
+            totales[categoria].compras += mov.monto;
         }
     });
 

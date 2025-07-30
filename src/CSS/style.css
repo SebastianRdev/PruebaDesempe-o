@@ -416,7 +416,7 @@ body {
     grid-row-start: 2;
 }
 
-#tarjeta-crear-movimiento {
+#tarjeta-crear-operaciones {
     grid-row: span 2 / span 2;
     grid-column-start: 2;
     grid-row-start: 1;
@@ -516,8 +516,8 @@ body {
     gap: 1rem;
 }
 
-/* Botón para eliminar movimiento */
-.btn-eliminar-movimiento {
+/* Botón para eliminar operaciones */
+.btn-eliminar-operacion {
     margin: 0 2px;
     min-width: 68px;
     height: 35px;
@@ -530,8 +530,8 @@ body {
     font-weight: 500;
 }
 
-/* Botón para editar movimiento */
-.btn-editar-movimiento {
+/* Botón para editar operaciones */
+.btn-editar-operacion {
     width: 70px;
     height: 35px;
     border: none;
@@ -560,7 +560,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#formulario-operaciones {
+#formulario-operacion {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -573,7 +573,7 @@ body {
     padding-bottom: 0.5rem;
 }
 
-.input-movimiento {
+.input-operacion {
     border: none;
     background-color: rgba(255, 255, 255, 0.55);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
@@ -582,7 +582,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.input-movimiento-opcion {
+.input-operacion-opcion {
     border: none;
     background-color: white;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
@@ -597,8 +597,8 @@ body {
     justify-content: center;
 }
 
-/* Botón para guardar movimiento */
-#btn-guardar-movimiento {
+/* Botón para guardar operaciones */
+#btn-guardar-operacion {
     width: 100px;
     height: 35px;
     border: none;
@@ -608,11 +608,11 @@ body {
     background-color: #00c4a7;
 }
 
-#btn-guardar-movimiento:hover {
+#btn-guardar-operacion:hover {
     background-color: #00a78e;
 }
 
-#btn-cancelar-movimiento {
+#btn-cancelar-operacion {
     width: 100px;
     height: 35px;
     border: none;
@@ -639,7 +639,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#formulario-operaciones-editar {
+#formulario-operacion-editar {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -652,8 +652,8 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Botón para guardar movimiento */
-#btn-guardar-movimiento-editar {
+/* Botón para guardar operaciones */
+#btn-guardar-operacion-editar {
     width: 100px;
     height: 35px;
     border: none;
@@ -663,11 +663,11 @@ body {
     background-color: #00c4a7;
 }
 
-#btn-guardar-movimiento-editar:hover {
+#btn-guardar-operacion-editar:hover {
     background-color: #00a78e;
 }
 
-#btn-cancelar-movimiento-editar {
+#btn-cancelar-operacion-editar {
     width: 100px;
     height: 35px;
     border: none;
@@ -911,7 +911,7 @@ body {
         box-sizing: border-box;
     }
 
-    #tarjeta-crear-movimiento {
+    #tarjeta-crear-operaciones {
         grid-row: 1;
         grid-column-start: 1;
         grid-row-start: 3;

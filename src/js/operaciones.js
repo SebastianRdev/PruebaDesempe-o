@@ -1,7 +1,6 @@
 const endpointCategorias = "http://localhost:3000/categories"
 const endpointOperaciones = "http://localhost:3000/operaciones"
 const operacionesTop = document.getElementById("operaciones-top")
-const contenidoOperaciones = document.getElementById("contenido-operaciones")
 
 const filtroTipo = document.getElementById("filtro-tipo-operacion")
 const filtroCategoria = document.getElementById("filtro-categoria-operacion")
@@ -102,8 +101,10 @@ async function pintarTodo() {
 
     main.innerHTML += `
         <section id="hero-operaciones">
+
             <div class="grid-contenedor-operaciones">
                 <article class="tarjeta-operaciones" id="tarjeta-balance">
+
                     <div class="balances">
                         <h2>Balance</h2>
                         <ul>
@@ -118,43 +119,55 @@ async function pintarTodo() {
                             </li>
                         </ul>
                     </div>
+                    
                 </article>
+
                 <article class="tarjeta-operaciones" id="tarjeta-filtros">
                     <div class="filtros" id="filtros">
                         <h2>Filtros</h2>
+
+                        <!-- Filtro por tipo de operaciones -->
                         <label>Tipo</label>
-                        <select id="filtro-tipo-operacion" class="input-operacion-opcion input-tipo-filtro">
+                        <select id="filtro-tipo-operaciones" class="input-operaciones-opcion input-tipo-filtro">
                             <option value="" selected>--Tipo--</option>
                             <option value="compra">Compra</option>
                             <option value="venta">Venta</option>
                         </select>
+
+                        <!-- Filtro por categoría -->
                         <label>Categoria</label>
-                        <select id="filtro-categoria-operacion" class="input-operacion-opcion">
+                        <select id="filtro-categoria-operaciones" class="input-operaciones-opcion">
                             <option value="" selected>--Categoria--</option>
                         </select>
+
+                        <!-- Filtro por fecha de inicio -->
                         <label for="filtro-fecha-inicio">Desde:</label>
                         <input type="date" id="filtro-fecha-inicio" class="date_filtros" name="desde">
+
+                        <!-- Filtro por tipo de operaciones -->
                         <label>Ordenar por</label>
-                        <select id="filtro-tipo-operacion" class="input-operacion-opcion input-tipo-filtro">
+                        <select id="filtro-tipo-operaciones" class="input-operaciones-opcion input-tipo-filtro">
                             <option value="" selected>--Ordenar--</option>
                             <option value="compra">Mas reciente</option>
                             <option value="venta">Mas antiguo</option>
                         </select>
                 </article>
-                <article class="tarjeta-operaciones-crear" id="tarjeta-crear-operacion">
+
+                <article class="tarjeta-operaciones-crear" id="tarjeta-crear-operaciones">
                     <div class="operaciones-top" id="operaciones-top">
                         <h2>Operaciones</h2>
-                        <button id="nueva-operacion" class="btn-nueva-operacion">+Nueva operación</button>
+                            <button id="nueva-operacion" class="btn-nueva-operacion">+Nueva operacion</button>
                     </div>
-                    <div class="contenido-operaciones">
-                        <img src="../../public/images/wallet.svg" alt="imagen sin resultados" id="imagen-sin-resultados">
-                        <p><span>Sin resultados</span></p>
-                        <p>Cambia los filtros o agrega operaciones</p>
+
+                    <div class="contenido-operaciones" id="contenido-operaciones">
+                        
                     </div>
                 </article>
             </div>
+
         </section>
     `
+    pintarOperaciones()
 }
 
 async function crearOperacion(nuevaOperacion) {
@@ -166,6 +179,7 @@ async function crearOperacion(nuevaOperacion) {
 }
 
 async function pintarOperaciones() {
+    const contenidoOperaciones = document.getElementById("contenido-operaciones")
     let response = await fetch(`${endpointOperaciones}?_embed=category`)
     let data = await response.json()
 
@@ -179,43 +193,51 @@ async function pintarOperaciones() {
     } else {
         contenidoOperaciones.innerHTML = ""
 
+        
+        contenidoOperaciones.innerHTML += `
+            <div class="tabla-responsive-wrapper">
+                <table id="tabla-operaciones">
+                    <thead>
+                        <tr>
+                            <th>Descripcion</th>
+                            <th>Categoria</th>
+                            <th>Fecha</th>
+                            <th>Monto</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-operaciones">
+                        
+                    </tbody>
+                </table>
+            </div>
+        `
+
+        const tbody = document.getElementById("tbody-operaciones")
+        tbody.innerHTML = ""
+
         for (let operacion of data) {
-            contenidoOperaciones.innerHTML += `
-                <div class="tabla-responsive-wrapper">
-                    <table id="tabla-operaciones">
-                        <thead>
-                            <tr>
-                                <th>Descripcion</th>
-                                <th>Categoria</th>
-                                <th>Fecha</th>
-                                <th>Monto</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody-operaciones">
-                            <tr>
-                                <td data-label="Descripción">${operacion.descripcion}</td>
-                                <td data-label="Categoría">${operacion.category === undefined ? "La categoría fue eliminada" : operacion.category.nombre}</td>
-                                <td data-label="Fecha">${operacion.fecha}</td>
-                                <td data-label="Monto">${operacion.monto}</td>
-                                <td data-label="Acciones">
-                                    <button class="btn-editar-operacion" 
-                                        data-id="${operacion.id}" 
-                                        data-tipo="${operacion.tipo}" 
-                                        data-descripcion="${operacion.descripcion}" 
-                                        data-monto="${operacion.monto}" 
-                                        data-fecha="${operacion.fecha}" 
-                                        data-categoria="${operacion.category ? operacion.category.id : ''}">Editar</button>
-                                    <button class="btn-eliminar-operacion" data-id="${operacion.id}">Eliminar</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            tbody.innerHTML += `
+                <tr>
+                    <td data-label="Descripción">${operacion.descripcion}</td>
+                    <td data-label="Categoría">${operacion.category === undefined ? "La categoría fue eliminada" : operacion.category.nombre}</td>
+                    <td data-label="Fecha">${operacion.fecha}</td>
+                    <td data-label="Monto">${operacion.monto}</td>
+                    <td data-label="Acciones">
+                        <button class="btn-editar-operacion" 
+                            data-id="${operacion.id}" 
+                            data-tipo="${operacion.tipo}" 
+                            data-descripcion="${operacion.descripcion}" 
+                            data-monto="${operacion.monto}" 
+                            data-fecha="${operacion.fecha}" 
+                            data-categoria="${operacion.category ? operacion.category.id : ''}">Editar</button>
+                        <button class="btn-eliminar-operacion" data-id="${operacion.id}">Eliminar</button>
+                    </td>
+                </tr>
             `
         }
 
-        const tbody = document.getElementById("tbody-operaciones")
+
         tbody.addEventListener("click", async function(event) {
             event.preventDefault()
 
@@ -226,6 +248,7 @@ async function pintarOperaciones() {
                     headers: { "Content-Type":"application/json"},
                     body: JSON.stringify()
                 })
+            pintarTodo()
             } else if (event.target.classList.contains("btn-editar-operacion")) {
                 const id = event.target.getAttribute("data-id");
                 const tipo = event.target.getAttribute("data-tipo");
@@ -321,6 +344,7 @@ async function pintarOperaciones() {
                         })
                         idEditando = null
                         formEditar.reset()
+                        pintarTodo()
                     }
                 })
             }

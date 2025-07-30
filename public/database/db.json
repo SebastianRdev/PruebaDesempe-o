@@ -12,46 +12,26 @@
       "id": "9b36"
     },
     {
-      "id": "3ff8",
-      "nombre": "Hogar"
-    },
-    {
-      "id": "05ad",
-      "nombre": "Ropa"
+      "nombre": "Ropas",
+      "id": "05ad"
     }
   ],
   "operaciones": [
     {
-      "id": "4550",
       "descripcion": "PC",
+      "monto": 3000,
+      "tipo": "venta",
+      "categoryId": "9b36",
+      "fecha": "2025-07-24",
+      "id": "d25e"
+    },
+    {
+      "id": "e825",
+      "descripcion": "Camisa",
       "monto": 2500,
       "tipo": "compra",
-      "categoryId": "9b36",
-      "fecha": "2025-07-29"
-    },
-    {
-      "id": "c456",
-      "descripcion": "PC2",
-      "monto": 222,
-      "tipo": "venta",
-      "categoryId": "9b36",
-      "fecha": "2025-07-31"
-    },
-    {
-      "id": "d25e",
-      "descripcion": "PC3",
-      "monto": 333,
-      "tipo": "compra",
-      "categoryId": "9b36",
-      "fecha": "2025-07-24"
-    },
-    {
-      "id": "2343",
-      "descripcion": "Escoba",
-      "monto": 2300,
-      "tipo": "venta",
-      "categoryId": "3ff8",
-      "fecha": "2025-07-19"
+      "categoryId": "05ad",
+      "fecha": "2025-06-20"
     }
   ]
 }
