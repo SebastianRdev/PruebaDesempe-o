@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción de la página -->
+    <meta name="description" content="Reporta las categorias y los productos mas vendidos y comprados en ShopWise">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="Reportes, Finanzas, ShopWise, Gastos, Ingresos">
+
+    <!-- Ícono de la pestaña -->
+    <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="./../../src/CSS/style.css">
+
+    <!-- Importa el script de guardian para protección/validación -->
+    <script type="module" src="./../js/guardian.js"></script>
+
+    <title>Reportes y analisis | ShopWise</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+
+        <!-- Barra de navegación usada para operaciones, categorias y reportes -->
+        <nav class="nav-modulos">
+
+            <!-- Título -->
+            <h1 class="nav-titulo">AhorrADAs</h1>
+
+            <!-- Navegacion derecha -->
+            <div class="nav-derecha">
+
+                <ul>
+                    <li>
+                        <a href="./operaciones.html">
+                            <img src="./../../public/icons/balance.png" alt="icono de balance">
+                            <p>Balance</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./categorias.html">
+                            <img src="./../../public/icons/categorias.png" alt="icono de categorias">
+                            <p>Categorias</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="./../../public/icons/reportes.png" alt="icono de reportes">
+                            <p>Reportes</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="icono-login-container">
+                <!-- Icono de login del usuario -->
+                    <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
+                    <div class="circulo-verde"></div>
+
+                    <!-- Menú flotante -->
+                    <div class="menu-login" id="menu-login">
+                        <button id="cerrar-sesion-btn">Cerrar sesión</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main-reportes">
+        
+        <section id="reportes">
+
+            <div class="contenedor-grid-reportes" id="grid-reportes">
+
+                <article class="tarjetas-reportes">
+
+                    <h2>🔝 Categoria mas vendida</h2>
+
+                    <div id="categoria-mas-vendida">
+                        <p>-</p>
+                    </div>
+
+                </article>
+
+                <article class="tarjetas-reportes">
+
+                    <h2>🛍️ Categoria con mas compras</h2>
+
+                    <div id="categoria-mas-compras">
+                        <p>-</p>
+                    </div>
+
+                </article>
+
+                <article class="tarjetas-reportes">
+
+                    <h2>📦 Producto mas vendido</h2>
+
+                    <div id="producto-mas-vendido">
+                        <p>-</p>
+                    </div>
+
+                </article>
+
+                <article class="tarjetas-reportes">
+
+                    <h2>🛒 Producto mas comprado</h2>
+
+                    <div id="producto-mas-comprado">
+                        <p>-</p>
+                    </div>
+
+                </article>
+
+                <article class="tarjetas-reportes">
+
+                    <h2>Mes con mas ventas</h2>
+
+                    <div id="mes-ventas">
+                        <p>-</p>
+                    </div>
+
+                </article>
+
+                <article class="tarjetas-reportes">
+
+                    <h2>Mes con mas compras</h2>
+
+                    <div id="mes-compras">
+                        <p>-</p>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <table class="tabla-reportes">
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Total Compras</th>
+                        <th>Total Ventas</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-mes">
+                    <!-- Filas generadas dinámicamente con JS -->
+                </tbody>
+            </table>
+
+            <table class="tabla-reportes">
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Total Compras</th>
+                        <th>Total Ventas</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-categorias">
+                    <!-- Filas generadas dinámicamente con JS -->
+                </tbody>
+            </table>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/reportes.js"></script>
+</body>
+</html>

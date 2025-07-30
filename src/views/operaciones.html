@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción de la página -->
+    <meta name="description" content="Gestión de operaciones financieros en AhorrADAs">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="operaciones, Finanzas, AhorrADAs, Gastos, Ingresos">
+
+    <!-- Ícono de la pestaña -->
+    <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="./../../src/CSS/style.css">
+
+    <!-- Importa el script de guardian para protección/validación -->
+    <script type="module" src="./../js/guardian.js"></script>
+
+    <title>operaciones | AhorrADAs</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+
+        <!-- Barra de navegación usada para operaciones, categorias y reportes -->
+        <nav class="nav-modulos">
+
+            <!-- Título -->
+            <h1 class="nav-titulo">AhorrADAs</h1>
+
+            <!-- Navegacion derecha -->
+            <div class="nav-derecha">
+
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="./../../public/icons/balance.png" alt="icono de balance">
+                            <p>Balance</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./categorias.html">
+                            <img src="./../../public/icons/categorias.png" alt="icono de categorias">
+                            <p>Categorias</p>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./reportes.html">
+                            <img src="./../../public/icons/reportes.png" alt="icono de reportes">
+                            <p>Reportes</p>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="icono-login-container">
+                <!-- Icono de login del usuario -->
+                    <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
+                    <div class="circulo-verde"></div>
+
+                    <!-- Menú flotante -->
+                    <div class="menu-login" id="menu-login">
+                        <button id="cerrar-sesion-btn">Cerrar sesión</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main-operaciones">
+        <section id="hero-operaciones">
+
+            <div class="grid-contenedor-operaciones">
+                <article class="tarjeta-operaciones" id="tarjeta-balance">
+
+                    <div class="balances">
+                        <h2>Balance</h2>
+                        <ul>
+                            <li>
+                                Ganancias <span id="ganancias">+$0</span>
+                            </li>
+                            <li>
+                                Gastos <span id="gastos">-$0</span>
+                            </li>
+                            <li>
+                                Total <span id="total-span">$0</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </article>
+
+                <article class="tarjeta-operaciones" id="tarjeta-filtros">
+                    <div class="filtros" id="filtros">
+                        <h2>Filtros</h2>
+
+                        <!-- Filtro por tipo de operaciones -->
+                        <label>Tipo</label>
+                        <select id="filtro-tipo-operaciones" class="input-operaciones-opcion input-tipo-filtro">
+                            <option value="" selected>--Tipo--</option>
+                            <option value="compra">Compra</option>
+                            <option value="venta">Venta</option>
+                        </select>
+
+                        <!-- Filtro por categoría -->
+                        <label>Categoria</label>
+                        <select id="filtro-categoria-operaciones" class="input-operaciones-opcion">
+                            <option value="" selected>--Categoria--</option>
+                        </select>
+
+                        <!-- Filtro por fecha de inicio -->
+                        <label for="filtro-fecha-inicio">Desde:</label>
+                        <input type="date" id="filtro-fecha-inicio" class="date_filtros" name="desde">
+
+                        <!-- Filtro por tipo de operaciones -->
+                        <label>Ordenar por</label>
+                        <select id="filtro-tipo-operaciones" class="input-operaciones-opcion input-tipo-filtro">
+                            <option value="" selected>--Ordenar--</option>
+                            <option value="compra">Mas reciente</option>
+                            <option value="venta">Mas antiguo</option>
+                        </select>
+                </article>
+
+                <article class="tarjeta-operaciones-crear" id="tarjeta-crear-operaciones">
+                    <div class="operaciones-top" id="operaciones-top">
+                        <h2>Operaciones</h2>
+                            <button id="nueva-operacion" class="btn-nueva-operacion">+Nueva operacion</button>
+                    </div>
+
+                    <div class="contenido-operaciones" id="contenido-operaciones">
+                        
+                    </div>
+                </article>
+            </div>
+
+        </section>
+    </main>
+
+    <script type="module" src="../js/operaciones.js"></script>
+</body>
+</html>

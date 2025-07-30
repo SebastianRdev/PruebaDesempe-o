@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción para buscadores -->
+    <meta name="description" content="Panel principal de ShopWise para gestionar movimientos, categorías y reportes">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="Dashboard, Finanzas, ShopWise, Gastos, Ingresos, Reportes">
+
+    <!-- Ícono del sitio -->
+    <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+
+    <link rel="stylesheet" href="./../../src/CSS/style.css">
+
+    <!-- Importa el script de guardian para protección/validación -->
+    <script type="module" src="./../js/guardian.js"></script>
+
+    <title>Dashboard | ShopWise</title>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <!-- Barra de navegación principal -->
+        <nav id="nav-dashboard">
+
+            <!-- Marca del sitio ShopWise -->
+            <a href="#">S<span>h</span>op<span>W</span>ise</a>
+
+            <!-- Contenedor para el icono de login -->
+            <div class="icono-login-container-dashboard" id="icono-login-dashboard">
+                <img src="./../../public/icons/login.png" alt="icono de login" id="icono-login">
+                <div class="circulo-verde"></div>
+            </div>
+
+            <!-- Menú desplegable -->
+            <div class="menu-login" id="menu-login">
+                <button id="cerrar-sesion-btn">Cerrar sesión</button>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- Contenido principal del dashboard -->
+    <main id="main-dashboard">
+        
+        <!-- Seccion dashboard -->
+        <section id="dashboard">
+
+            <!-- Parte superior con título y subtítulo -->
+            <div class="dashboard-top">
+                <h1>Elige algo para hacer</h1>
+                <p>Se encuentran Movimientos, Categorias y Reportes</p>
+            </div>
+
+            <!-- Grid de opciones principales del dashboard -->
+            <div class="dashboard-grid">
+
+                <!-- Opción para gestionar movimientos -->
+                <a href="./movimientos.html" class="dashboard-item movimientos" id="it1">
+                    <img src="./../../public/images/movimientos.png" alt="Movimientos">
+                    <div class="text-movimientos">
+                        <h2>Movimientos</h2>
+                        <p>Gestiona tus ingresos y gastos.</p>
+                    </div>
+                </a>
+
+                <!-- Opción para gestionar categorías -->
+                <a href="./categorias.html" class="dashboard-item categorias" id="it2">
+                    <img src="./../../public/images/categorias.png" alt="Categorias">
+                    <h2>Categorías</h2>
+                    <p>Organiza tus gastos e ingresos por categorías.</p>
+                </a>
+
+                <!-- Opción para ver reportes -->
+                <a href="./reportes.html" class="dashboard-item reportes" id="it3">
+                    <img src="./../../public/images/Reportes.png" alt="Reportes">
+                    <h2>Reportes</h2>
+                    <p>Genera reportes detallados de tus finanzas.</p>
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+    
+    <!-- Importa el archivo JavaScript específico para esta página -->
+    <script type="module" src="./../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,991 @@
+/* Reseteo global de márgenes, paddings y box-sizing para todos los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales para html y body: evita scroll horizontal, tipografía y color base */
+html, body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Fondo de la página con imagen */
+body {
+    background-image: url("./../../public/images/fondo.png");
+    background-repeat: repeat-y;
+    background-size: cover; /* o '100% auto' si prefieres */
+    background-position: top center;
+}
+
+/* ===================
+   PAGINA INDEX
+   ===================*/
+
+/* Sección principal con fondo degradado y centrado de contenido */
+#hero {
+    display: flex;
+    justify-content: center; /* Centra el bloque contenedor en la pantalla */
+    align-items: center;
+    min-height: 100vh;
+    background: #0E3B43;
+    background: linear-gradient(90deg, rgba(14, 59, 67, 1) 0%, rgba(83, 0, 230, 1) 100%);
+    padding: 2rem;
+}
+
+/* Contenedor principal, distribuye los bloques izquierdo y derecho */
+.bloque-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 80vh; /* Ajustamos la altura */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Bloque izquierdo: texto, título, lista y botón, con fondo blanco */
+.bloque-izquierdo {
+    width: 55%;
+    height: 59.8vh;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0 0 10px;
+}
+
+/* Título principal del bloque izquierdo */
+.bloque-izquierdo h1 {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #0E3B43;
+    margin-bottom: 1.5rem;
+}
+
+/* Párrafo del bloque izquierdo */
+.bloque-izquierdo p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #0E3B43;
+}
+
+/* Lista no ordenada del bloque izquierdo */
+.bloque-izquierdo ul {
+    list-style-type: none;
+    margin-bottom: 2rem;
+}
+
+/* Elementos de la lista del bloque izquierdo */
+.bloque-izquierdo li {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: #0E3B43;
+}
+
+/* Botón de iniciar sesión */
+.bloque-izquierdo button {
+    width: 70%;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #5300e6;
+    border: 2px solid #5300e6; /* Agregamos un borde más notorio */
+    border-radius: 25px; /* Bordes más redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.bloque-izquierdo button:hover {
+    background-color: #0e3b43;
+    border-color: #0e3b43; /* El borde también cambia de color */
+}
+
+/* Bloque derecho (imagen) */
+.bloque-derecho {
+    width: 45%;
+    height: 59.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #D9D9D9;
+    border-radius: 0 10px 10px 0;
+}
+
+/* Imagen dentro del bloque derecho */
+.bloque-derecho img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
+/* ===================
+   PAGINA LOGIN
+   ===================*/
+
+/* Contenedor principal del login, flex horizontal */
+.contenedor-login {
+    display: flex;
+    overflow-y: hidden;
+}
+
+/* Bloque izquierdo del login: información y fondo */
+.bloque-info {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(154deg,rgba(0, 209, 178, 1) 0%, rgba(83, 0, 230, 1) 100%);
+    color: white;
+}
+
+/* Grupo de párrafo del bloque info */
+.grupo-parrafo {
+    margin: 10rem 10rem 0 10rem;
+}
+
+.grupo-parrafo p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Imagen de fondo para el login */
+#fondo-login {
+    width: 100%;
+    height: 350px;
+    object-fit: fill;
+}
+
+/* Bloque derecho del login: formulario */
+.bloque-login {
+    position: relative;
+    width: 35%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Contenedor de los elementos del formulario de login */
+.elementos-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+/* Grupo de input con imagen e input alineados */
+.grupo-input {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Input de usuario y contraseña en login */
+.grupo-input input,
+.elementos-login input {
+    width: 100%;
+    height: 2rem;
+    padding-left: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(15, 0, 230, 0.15);
+}
+
+/* Iconos dentro del grupo de input */
+.grupo-input img {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+/* Botón de login */
+.elementos-login button {
+    width: 40%;
+    height: 1.6rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(154deg,rgba(0, 209, 178, 1) 0%, rgba(83, 0, 230, 1) 100%);
+    transition: all 0.3s ease;
+}
+
+.elementos-login button:hover {
+    background: linear-gradient(154deg,rgba(83, 0, 230, 1) 0%, rgba(0, 209, 178, 1) 100%);
+    box-shadow: 0px 5px 15px rgba(14, 59, 67, 0.3);
+}
+
+/* Mensaje flotante de login (éxito o error) */
+#mensaje-login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    min-width: 220px;
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeInOut 3s ease forwards;
+}
+
+/* Mensaje de error en login */
+.mensaje-error {
+    background-color: #ffe5e5;
+    color: #b30000;
+    border-left: 5px solid #ff4d4d;
+}
+
+/* Mensaje de éxito en login */
+.mensaje-exito {
+    background-color: #e5ffe5;
+    color: #006600;
+    border-left: 5px solid #33cc33;
+}
+
+/* Animación para aparición y desaparición del mensaje */
+@keyframes fadeInOut {
+    0%   { opacity: 0; transform: translateX(20px); }
+    10%  { opacity: 1; transform: translateX(0); }
+    90%  { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(20px); }
+}
+
+
+/* ===================
+   PAGINA operaciones
+   ===================*/
+
+.nav-modulos {
+    width: 100%;
+    min-height: 70px;
+    background: #00D1B2;
+    background: linear-gradient(154deg,rgba(0, 209, 178, 1) 0%, rgb(8, 161, 138) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    color: white;
+    flex-wrap: wrap;
+}
+
+.nav-derecha {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-derecha ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-right: 2rem;
+}
+
+.nav-derecha a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 1.5rem;
+}
+
+.nav-derecha p {
+    padding-left: 0.5rem;
+}
+
+.icono-login-container {
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    padding-right: 1rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.icono-login-container:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del icono de login */
+#icono-login {
+    width: 33px;
+    height: 33px;
+    margin: 22% 0 0 25%;
+}
+
+/* Círculo verde indicador de sesión activa */
+.circulo-verde {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #6EEB83;
+    border-radius: 50%;
+    bottom: 25%;
+    right: 20%;
+}
+
+.menu-login {
+    position: absolute;
+    top: 8%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    z-index: 100;
+}
+
+.menu-login button {
+    background-color: #FF171B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-login button:hover {
+    background-color: #c30000;
+}
+
+/* ===================
+   MAIN operaciones
+   ===================*/
+#main-operaciones {
+    height:100%;
+}
+
+#hero-operaciones {
+    max-width: 90%;
+    margin: 4rem auto;
+}
+
+.grid-contenedor-operaciones {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tarjeta-operaciones {
+
+    height: auto;
+    border-radius: 2px;
+    padding: 2rem;
+    background: #FFFFFF;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(236, 236, 236) 100%); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-operaciones-crear {
+    width: 90%;
+    height: auto;
+    border-radius: 2px;
+    padding: 2rem;
+    background: #FFFFFF;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(236, 236, 236) 100%); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+#tarjeta-filtros {
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+#tarjeta-crear-movimiento {
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.balances ul{
+    list-style: none;
+}
+
+.balances li{
+    padding-top: 1rem;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtros label {
+    padding-top: 1rem;
+}
+
+.operaciones-top {
+    display: flex;
+}
+
+#nueva-operacion {
+    margin-left: auto;
+    background-color: #00c4a7;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+#nueva-operacion:hover {
+    background-color: #00a78e;
+}
+
+.contenido-operaciones {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    align-items: center;
+}
+
+#imagen-sin-resultados {
+    width: 70%;
+    padding-bottom: 3rem;
+}
+
+.contenido-operaciones p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.contenido-operaciones span {
+    font-weight: bold;
+}
+
+.tabla-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#tabla-operaciones {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    background: white;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Encabezado bonito */
+#tabla-operaciones thead {
+    background: #00c4a7;
+    color: white;
+    font-weight: bold;
+}
+
+#tabla-operaciones th, #tabla-operaciones td {
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap; /* Importante para que NO corte palabras verticalmente */
+}
+
+/* Opciones (botones) alineados al centro y con separación */
+#tabla-operaciones td[data-label="Acciones"] {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Botón para eliminar movimiento */
+.btn-eliminar-movimiento {
+    margin: 0 2px;
+    min-width: 68px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF171B;
+    font-size: .95rem;
+    font-weight: 500;
+}
+
+/* Botón para editar movimiento */
+.btn-editar-movimiento {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #064789;
+}
+
+
+
+
+/* -------------------------
+   PAGINA AGREGAR OPERACION
+   ------------------------*/
+#seccion-nueva-operacion {
+    max-width: 90%;
+    margin: 4rem auto;
+    position: relative; /* Esto es crucial */
+    z-index: 1;
+    height: auto;
+    border-radius: 2px;
+    padding: 2rem;
+    background: #FFFFFF;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(236, 236, 236) 100%); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-operaciones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contenedor-nueva-operacion label {
+    color: #0E3B43;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.input-movimiento {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-movimiento-opcion {
+    border: none;
+    background-color: white;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.botones-operaciones {
+    display: flex;
+    margin: 2rem 0 1rem 0;
+    justify-content: center;
+}
+
+/* Botón para guardar movimiento */
+#btn-guardar-movimiento {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #00c4a7;
+}
+
+#btn-guardar-movimiento:hover {
+    background-color: #00a78e;
+}
+
+#btn-cancelar-movimiento {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF171B;
+    margin-right: 1rem;
+}
+
+/* ------------------------
+   PAGINA EDITAR OPERACION
+   -----------------------*/
+#seccion-editar-operacion {
+    max-width: 90%;
+    margin: 4rem auto;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    border-radius: 2px;
+    padding: 2rem;
+    background: #FFFFFF;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(236, 236, 236) 100%); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#formulario-operaciones-editar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contenedor-editar-operacion label {
+    color: #0E3B43;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Botón para guardar movimiento */
+#btn-guardar-movimiento-editar {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #00c4a7;
+}
+
+#btn-guardar-movimiento-editar:hover {
+    background-color: #00a78e;
+}
+
+#btn-cancelar-movimiento-editar {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF171B;
+    margin-right: 1rem;
+}
+
+/* ===================
+   PAGINA CATEGORIAS
+   ===================*/
+#main-categorias {
+    height:100%;
+}
+
+#categorias {
+    max-width: 90%;
+    margin: 4rem auto;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    border-radius: 2px;
+    padding: 2rem;
+    background: #FFFFFF;
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgb(236, 236, 236) 100%); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-categorias {
+    display: flex;
+    flex-direction: column;
+}
+
+#formulario-categorias {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contenedor-categorias label {
+    color: #0E3B43;
+    font-weight: 500;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Input para el nombre de la categoría */
+#nombre-categoria {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-guardar-categoria {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #00c4a7;
+}
+
+.btn-guardar-categoria:hover {
+    background-color: #00a78e;
+}
+
+/* Contenedor para la lista de categorías */
+.lista-categorias {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6rem;
+    border-radius: 15px;
+}
+
+/* Contenedor de tarjetas de categorías */
+.tarjetas-categorias {
+    width: 100%;
+    margin-top: 2rem;
+    gap: 20px;
+}
+
+/* Tarjeta individual de categoría */
+.tarjeta {
+    border-left: 6px solid #00a78e;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Botón habilitado para eliminar categoría */
+.btn-eliminar-categoria {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #FF171B;
+    margin-right: 1rem;
+    margin-left: auto;
+}
+
+/* Botón para editar categoría */
+.btn-editar-categoria {
+    width: 70px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-color: #064789;
+    margin-right: 1rem;
+}
+
+
+
+/* ===================
+   PAGINA REPORTES
+   ===================*/
+
+/* Main de reportes */
+#main-reportes {
+    height: 100%;
+}
+
+/* Contenedor principal de reportes */
+#reportes {
+    max-width: 90%;
+    margin: 4rem auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Grid principal de tarjetas de reportes */
+.contenedor-grid-reportes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 1.5rem;
+}
+
+/* Tarjeta individual de reporte */
+.tarjetas-reportes {
+    border-radius: 2px;
+    padding: 2rem;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjetas-reportes:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título de la tarjeta de reporte */
+.tarjetas-reportes h2 {
+    color: #00a78e;
+    font-size: 1.3rem;
+}
+
+/* Párrafo en la tarjeta de reporte */
+.tarjetas-reportes p {
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tabla-reportes {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 4rem;
+    font-size: 0.95rem;
+    border: 1px solid #00c4a7;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.tabla-reportes th,
+.tabla-reportes td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.tabla-reportes th {
+    background: #00c4a7;
+    background: linear-gradient(154deg,rgba(0, 209, 178, 1) 0%, rgb(8, 161, 138) 100%);
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid #00c4a7;
+}
+
+.tabla-reportes td {
+    border-bottom: 1px solid #00c4a7;
+}
+
+.tabla-reportes tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-reportes tr:hover {
+    background-color: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+
+    #main-operaciones {
+        max-width: 60%;
+    }
+
+    #hero-operaciones {
+        max-width: 80%;
+        margin: 4rem auto;
+    }
+
+    .grid-contenedor-operaciones {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .tarjeta-operaciones {
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .tarjeta-operaciones-crear {
+        width: 90%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    #tarjeta-crear-movimiento {
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    #tabla-operaciones {
+        width: auto;
+        font-size: 0.93rem;
+    }
+
+    .contenido-operaciones {
+        display: flex;
+        flex-direction: column;
+        padding-top: 3rem;
+        align-items: center;
+    }
+}
+
+@media (max-width: 425px) {
+
+    #main-operaciones {
+        max-width: 40%;
+    }
+
+    #hero-operaciones {
+        max-width: 80%;
+        margin: 4rem auto;
+    }
+
+    .tarjeta-operaciones {
+        width: 50%;
+        height: auto;
+        padding: 2rem;
+    }
+
+    .tarjeta-operaciones-crear {
+        width: 50%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .nav-modulos {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+        color: white;
+        flex-wrap: wrap;
+    }
+
+    .nav-derecha {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-derecha ul {
+        margin-right: 2rem;
+    }
+
+    .nav-derecha a {
+        align-items: center;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+
+    .nav-derecha p {
+        padding-left: 0.5rem;
+    }
+
+    .nav-titulo h1 {
+        margin-top: 1rem
+    }
+
+    .icono-login-container {
+        margin: 0 auto;
+    }
+}

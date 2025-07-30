@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Hace que el sitio sea responsive y se adapte a dispositivos móviles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Descripción para buscadores -->
+    <meta name="description" content="Inicio de sesión de AhorrADAs para usuarios registrados">
+
+    <!-- Autor de la página -->
+    <meta name="author" content="Sebastian Reyes">
+
+    <!-- Palabras clave para SEO -->
+    <meta name="keywords" content="Login, Iniciar sesión, AhorrADAs, Finanzas, Usuarios">
+
+    <!-- Ícono de la pestaña -->
+    <link rel="icon" href="./../../public/icons/favicon.png" type="image/png">
+    
+    <link rel="stylesheet" href="./../CSS/style.css">
+    <title>LogIn | AhorrADAs</title>
+</head>
+<body>
+
+    <!-- Contenido principal de la página de login -->
+    <main>
+
+        <div class="contenedor-login">
+
+            <!-- Bloque informativo con bienvenida y descripción -->
+            <div class="bloque-info">
+
+                <div class="grupo-parrafo">
+                    <h1>Bienvenido a AhorrADAs</h1>
+                    <p>"AhorrADAs es tu solución integral para gestionar las finanzas de tus compras y ventas. Con nuestra plataforma, podrás controlar tus ingresos y gastos, analizar tu flujo de caja y tomar decisiones informadas para maximizar tus ganancias. Optimiza tu negocio con ShopWise y lleva tus finanzas al siguiente nivel"</p>
+                </div>
+
+                <!-- Imagen decorativa de fondo para el login -->
+                <img src="./../../public/images/fondo-abstracto.png" alt="fondo login" id="fondo-login">
+
+            </div>
+
+            <!-- Bloque con el formulario de inicio de sesión -->
+            <div class="bloque-login">
+
+                <!-- Mensaje de error o bienvenida para el login -->
+                <div id="mensaje-login"></div>
+
+                <!-- Formulario para ingresar usuario y contraseña -->
+                <form id="form-login" class="elementos-login">
+
+                    <h2>USER LOGIN</h2>
+
+                    <!-- Grupo para el input del usuario -->
+                    <div class="grupo-input">
+                        <img src="./../../public/icons/user-regular-full.svg" alt="Usuario">
+                        <input type="text" id="user" name="username" placeholder="Usuario" required>
+                    </div>
+
+                    <!-- Grupo para el input de la contraseña -->
+                    <div class="grupo-input">
+                        <img src="./../../public/icons/candado.png" alt="Contraseña">
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    </div>
+
+                    <!-- Botón para enviar el formulario de login -->
+                    <button type="submit" id="btn-login">Login</button>
+
+                </form>
+                
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Importa el archivo JavaScript específico para esta página -->
+    <script type="module" src="./../js/login.js"></script>
+</body>
+</html>
