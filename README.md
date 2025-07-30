@@ -1,4 +1,4 @@
-# 💸 ShopWise – Gestión de Finanzas
+# 💸 AHOrrADAs – Gestión de Finanzas
 
 Este es un proyecto web para gestionar y analizar operaciones financieros, desarrollado con **Vite, **HTML**, **CSS** y **JavaScript**, usando **json-server** como API REST simulada.  
 Permite crear, listar, editar y eliminar operaciones y categorías, además de visualizar reportes de finanzas.
@@ -65,7 +65,7 @@ npm install json-server --save-dev
 ### 1. Inicia el backend (json-server)
 
 ```bash
-npx json-server --watch public/databases/db.json --port 3000
+npx json-server --watch public/database/db.json --port 3000
 ```
 ### 2. Inicia el fronted (vite)
 
